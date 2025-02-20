@@ -4,7 +4,7 @@ ENV_NAME="my_env"
 
 # Activate the Python environment
 echo "Activating Python environment: $ENV_NAME..."
-source ../apple_phenotyping/$ENV_NAME/bin/activate
+source $ENV_NAME/bin/activate
 
 # # Run the first script
 echo "Running main.py with config.yaml..."
