@@ -1,0 +1,43 @@
+base_dir: "data"
+
+dates:
+  - "2024-04-24"
+  - "2024-04-29"
+  - "2024-05-06"
+  - "2024-05-10"
+  - "2024-05-14"
+  - "2024-05-20"
+  - "2024-05-29"
+
+labels: 
+  start_label: 1  
+  end_label: 105
+
+model_path: "models/best.pt"
+experiment_name: "test1"
+
+tasks:
+  - "video_processing"
+  - "outlier_detection"
+  - "image_creation"
+  - "final_dataset_creation"
+  - "validation"
+
+# detection
+image_size: 640
+conf_threshold: 0.35
+obb: True
+
+# pre-processing & clustering
+background_threshold: 0.7
+zscore: False
+zscore_threshold: 3.5
+linkage_type: "complete"
+cluster_threshold: 7.5
+
+# anomaly detection
+z: 5
+vae_epochs: 200
+percentile_threshold: 94
+seed: 40
+frame_extraction: "max_stable"
