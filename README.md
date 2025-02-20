@@ -30,10 +30,15 @@ pip install -r requirements.txt
 ./run_pipeline.sh
 ```
 This bash script executes two Python files `main.py` and `main_postprocessing.py`.
-`main.py` takes a configuration file and processes bag files frame by frame. It includes 3 tasks:
-- `video_processing`: executes detection and depth analysis, including size estimation
-- `outlier_detection`: takes as input the csv created in the previous task and perform anomaly detection to remove false positives bounding boxes
-- `image_creation`: creates all the images using RGB frames and bounding box annotations from the final csv file
+1. `main.py` takes as input a configuration file and processes bag files frame by frame. It includes 3 tasks:
+- `video_processing`: performs object detection, depth analysis, and size estimation of fruitlets for all videos
+- `outlier_detection`: filters the generated CSV file to remove false-positive bounding boxes using anomaly detection
+- `image_creation`: generates RGB images with bounding boxes based on the final CSV file
+
+2. `main_postprocessing.py` takes as input the same configuration file and validate the results. It includes 2 tasks:
+- `final_dataset_creation`: concatenates all CSV files into a single large DataFrame.
+- `validation`: extracts the most informative frames for each video in the final dataset and performs a performance evaluation against the ground truth.
+
 
  
 
