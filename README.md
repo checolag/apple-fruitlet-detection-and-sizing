@@ -9,6 +9,7 @@ git clone https://github.com/checolag/apple-fruitlet-detection-and-sizing.git
 cd apple-fruitlet-detection-and-sizing
 ```
 ### Step 1: Set Up a Python Virtual Environment
+- Ensure you are using **Python 3.8.10** for compatibility: `python3 --version`
 Create and activate a Python virtual environment by installing the necessary dependencies from the `requirements.txt` file. It might take a while.
 
 ```bash
