@@ -21,8 +21,7 @@ pip install -r requirements.txt
 ### Step 2: Download and Set Up the [Dataset](https://doi.org/10.5281/zenodo.14844598)
 - To execute the RGB-D workflow, download the necessary files from Zenodo (`bag_videos.zip` (12.7 GB), `ground_truth_caliper_measurements.csv`)
 - Extract `bag_videos.zip`
-- Rename the extracted folder to `data`
-- Move the `data` folder into the cloned repository directory
+- Move the `bag_file` folder into `data` the cloned repository directory
 - Modify `config.yaml` and `config_post.yaml` to adjust settings as needed.
 
 ### Step 3: Run the Executing Scripts for Video Analysis and Anomaly Detection
