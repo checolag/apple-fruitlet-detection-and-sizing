@@ -8,20 +8,21 @@ The pipeline allows you to analyze RGB and depth frame sequences to extract the 
 git clone https://github.com/checolag/apple-fruitlet-detection-and-sizing.git
 cd apple-fruitlet-detection-and-sizing
 ```
-### Step 1: Create a Python Local Environment
-Start by creating a Python virtual environment and installing the necessary dependencies from the `requirements.txt` file. It might take a while.
+### Step 1: Set Up a Python Virtual Environment
+Create and activate a Python virtual environment by installing the necessary dependencies from the `requirements.txt` file. It might take a while.
 
 ```bash
 python3 -m venv my_env
-source my_env/bin/activate
+source my_env/bin/activate # On Windows, use `my_env\Scripts\activate`
 pip install -r requirements.txt
 ```
 
-### Step 2: Download the complete [dataset](https://doi.org/10.5281/zenodo.14844598).
-To execute the RGB-D workflow, you need `bag_videos.zip` (12.7 GB) and `ground_truth_caliper_measurements.csv`.
-Once extracted the zip file:
-- rename it as `data` and move it to the clone directory
-- use `config.yaml` and `config_post.yaml` to modify your settings based on your preferences
+### Step 2: Download and Set Up the [Dataset](https://doi.org/10.5281/zenodo.14844598)
+- To execute the RGB-D workflow, download the necessary files from Zenodo (`bag_videos.zip` (12.7 GB), `ground_truth_caliper_measurements.csv`)
+- Extract `bag_videos.zip`
+- Rename the extracted folder to `data`
+- Move the `data` folder into the cloned repository directory
+- Modify `config.yaml` and `config_post.yaml` to adjust settings as needed.
 
 ### Step 3: Run the Executing Scripts for Video Analysis and Anomaly Detection
 ```bash
