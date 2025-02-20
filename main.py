@@ -16,16 +16,17 @@ def process_bag_files(config, tasks):
     pattern = re.compile(r".*_(\d+)$")
     surveys = config["dates"]
     base_path = Path(config["base_dir"])
+    bag_file_path = base_path / "bag_files"
     results_path = Path("results") / config["experiment_name"]
     results_path.mkdir(parents=True, exist_ok=True)
 
     start_label = config["labels"].get("start_label", None)
     end_label = config["labels"].get("end_label", None)
     corymb_range = determine_corymb_ranges(start_label, end_label)
-    if not base_path.exists():
-        print(f"Data directory not found: {base_path}")
+    if not bag_file_path.exists():
+        print(f"Data directory not found: {bag_file_path}")
     else:
-        bag_files = sorted([f for f in base_path.glob("*.bag") if f.is_file()])
+        bag_files = sorted([f for f in bag_file_path.glob("*.bag") if f.is_file()])
         filtered_files = []
         for bag_file in bag_files:
             match = pattern.search(bag_file.stem)

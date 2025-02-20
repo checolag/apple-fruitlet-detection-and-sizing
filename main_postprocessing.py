@@ -36,6 +36,7 @@ def post_process_results(config, tasks):
     """
 
     current_dir = Path("results")
+    data_dir = Path("data")
     (current_dir / f"final_dataframes").mkdir(parents=True, exist_ok=True)
     final_data_path = current_dir / f"final_dataframes/{config['experiment_name']}.csv"
     final_outliers_path = current_dir / f"final_dataframes/{config['experiment_name']}_outliers.csv"
@@ -88,7 +89,7 @@ def post_process_results(config, tasks):
             print(f"You need to create the final dataset")
             return 
         else:
-            df_gt = pd.read_csv(Path("groundtruth") / "file_allcorymbs_new_corrected.csv").dropna(subset=['Diameter'])
+            df_gt = pd.read_csv(data_dir /"ground_truth/file_allcorymbs_new_corrected.csv").dropna(subset=['Diameter'])
             df_gt = df_gt.dropna(subset=['Diameter'])
             df_size = df_gt.groupby(['Date', 'Label']).size().reset_index(name='Count')
 

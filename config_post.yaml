@@ -1,7 +1,0 @@
-base_dir: "data"
-experiment_name: "test1"
-
-tasks:
-  - "final_dataset_creation"
-
-
