@@ -12,15 +12,18 @@ source my_env/bin/activate
 pip install -r requirements.txt
 ```
 
-### Step 2: Download the complete [https://doi.org/10.5281/zenodo.14844598](dataset) and rename the directory in `data`.
+### Step 2: Download the complete [dataset](https://doi.org/10.5281/zenodo.14844598) and rename the directory in `data`.
 
 ### Step 3: Run the Executing Scripts for Video Analysis and Anomaly Detection
 ```bash
 ./run_pipeline.sh
 ```
-The code runs two .py scripts used for analyze the bag videos and post-process the detection and sizing output.
-The first include: 
-- video processing
-- 
+This bash script executes two Python files `main.py` and `main_postprocessing.py`.
+`main.py` takes a configuration file and processes bag files frame by frame. It includes 3 tasks:
+- `video_processing`: executes detection and depth analysis, including size estimation
+- `outlier_detection`: takes as input the csv created in the previous task and perform anomaly detection to remove false positives bounding boxes
+- `image_creation`: creates all the images using RGB frames and bounding box annotations from the final csv file
+
+ 
 
 
